@@ -1,0 +1,426 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>For My Bestie 💗</title>
+
+<style>
+*{
+    box-sizing:border-box;
+    margin:0;
+    padding:0;
+}
+
+body{
+    font-family: "Poppins", Arial, sans-serif;
+    min-height:100vh;
+    overflow:hidden;
+    background:linear-gradient(135deg,#ffd6e7,#fff0f6,#ffc1dc);
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    color:#7a2850;
+}
+
+.card{
+    width:92%;
+    max-width:430px;
+    min-height:570px;
+    padding:30px 22px;
+    border-radius:30px;
+    background:rgba(255,255,255,.72);
+    box-shadow:0 15px 50px rgba(160,50,100,.25);
+    backdrop-filter:blur(12px);
+    text-align:center;
+    position:relative;
+    overflow:hidden;
+}
+
+.page{
+    display:none;
+    height:100%;
+    animation:fade .7s ease;
+}
+
+.page.active{
+    display:flex;
+    flex-direction:column;
+    justify-content:center;
+    align-items:center;
+}
+
+@keyframes fade{
+    from{opacity:0;transform:scale(.9)}
+    to{opacity:1;transform:scale(1)}
+}
+
+h1{
+    font-size:29px;
+    margin-bottom:15px;
+    color:#d63378;
+}
+
+h2{
+    font-size:23px;
+    margin-bottom:14px;
+}
+
+p{
+    font-size:16px;
+    line-height:1.7;
+}
+
+button{
+    border:none;
+    padding:13px 28px;
+    margin:10px 6px;
+    border-radius:30px;
+    background:linear-gradient(135deg,#ff4f9a,#d92d73);
+    color:white;
+    font-size:16px;
+    font-weight:bold;
+    cursor:pointer;
+    box-shadow:0 7px 18px rgba(217,45,115,.25);
+    transition:.25s;
+}
+
+button:hover{
+    transform:scale(1.07);
+}
+
+.noBtn{
+    background:white;
+    color:#d63378;
+    border:2px solid #ff82b4;
+}
+
+.heart{
+    font-size:70px;
+    animation:heartbeat 1.3s infinite;
+    margin-bottom:10px;
+}
+
+@keyframes heartbeat{
+    0%,100%{transform:scale(1)}
+    50%{transform:scale(1.18)}
+}
+
+.hug{
+    font-size:95px;
+    animation:hug 1.5s infinite;
+}
+
+@keyframes hug{
+    0%,100%{transform:scale(1) rotate(-3deg)}
+    50%{transform:scale(1.15) rotate(3deg)}
+}
+
+.poetry{
+    margin-top:15px;
+    padding:18px;
+    border-radius:20px;
+    background:rgba(255,182,210,.3);
+    font-style:italic;
+}
+
+.firework{
+    position:fixed;
+    font-size:30px;
+    animation:boom 1.8s ease-out forwards;
+    pointer-events:none;
+}
+
+@keyframes boom{
+    0%{transform:scale(.2);opacity:1}
+    100%{
+        transform:translate(var(--x),var(--y)) scale(1.5);
+        opacity:0;
+    }
+}
+
+.floating{
+    position:absolute;
+    bottom:-30px;
+    font-size:24px;
+    animation:float 6s linear infinite;
+    opacity:.7;
+}
+
+@keyframes float{
+    from{
+        transform:translateY(0) rotate(0);
+        opacity:0;
+    }
+    20%{opacity:.8}
+    to{
+        transform:translateY(-700px) rotate(360deg);
+        opacity:0;
+    }
+}
+
+.small{
+    font-size:13px;
+    margin-top:10px;
+    opacity:.7;
+}
+
+.final{
+    font-size:18px;
+    font-weight:bold;
+    line-height:1.8;
+}
+
+</style>
+</head>
+
+<body>
+
+<div class="card">
+
+    <!-- PAGE 1 -->
+    <section class="page active" id="page1">
+        <div class="heart">💗</div>
+        <h1>Ek Important Sawal...</h1>
+        <p>
+            Pehle honestly answer dena 😌<br>
+            <b>Do you love me, Bestie? 💕</b>
+        </p>
+
+        <div>
+            <button onclick="nextPage(2)">YES 💗</button>
+            <button class="noBtn" onclick="nextPage(3)">NO 🙄</button>
+        </div>
+    </section>
+
+
+    <!-- PAGE 2 -->
+    <section class="page" id="page2">
+        <div class="heart">🥹💗</div>
+        <h1>Owww! 🥺</h1>
+        <p>
+            Mujhe pata tha meri bestie ka dil<br>
+            itna bhi stone nahi hai 😂💕
+        </p>
+        <button onclick="nextPage(4)">I Love You 💗</button>
+    </section>
+
+
+    <!-- PAGE 3 -->
+    <section class="page" id="page3">
+        <div class="heart">😭</div>
+        <h1>Oops! 😂</h1>
+        <p>
+            Ye answer allowed hi nahi tha! 😤<br>
+            Dobara socho Bestie... 💗
+        </p>
+        <button onclick="nextPage(4)">Okayyy 💕</button>
+    </section>
+
+
+    <!-- PAGE 4 -->
+    <section class="page" id="page4">
+        <div class="heart">💞</div>
+        <h1>I Love You Too! 💗</h1>
+        <p>
+            Jlebi Janooo 😭😂💗<br><br>
+            Tum meri favorite bestie ho,<br>
+            aur ye fact change nahi ho sakta. 🫶
+        </p>
+
+        <button onclick="nextPage(5)">Next Surprise ✨</button>
+    </section>
+
+
+    <!-- PAGE 5 -->
+    <section class="page" id="page5">
+        <div class="hug">🫂</div>
+        <h1>Come Here Bestie! 🥺</h1>
+        <p>
+            Ye lo ek bohattttt bara virtual hug 🫂💗
+        </p>
+        <p class="small">
+            *Hug loading... 100% complete* 😂
+        </p>
+
+        <button onclick="nextPage(6)">Next 💕</button>
+    </section>
+
+
+    <!-- PAGE 6 -->
+    <section class="page" id="page6">
+        <div class="heart">🌸</div>
+        <h2>For My Special Bestie 💗</h2>
+
+        <div class="poetry">
+            "Dosti wo nahi jo har waqt paas ho,<br>
+            dosti wo hai jo door reh kar bhi khaas ho.<br>
+            Kuch log zindagi mein bas milte nahi,<br>
+            balkay zindagi ka khoobsurat hissa ban jate hain. 💕"
+        </div>
+
+        <p style="margin-top:15px;">
+            Aur tum unhi logon mein se ho. 🥹💗
+        </p>
+
+        <button onclick="nextPage(7)">Next Surprise ✨</button>
+    </section>
+
+
+    <!-- PAGE 7 -->
+    <section class="page" id="page7">
+        <div style="font-size:75px;">🎆</div>
+        <h1>Surpriseeeee! 🎉</h1>
+
+        <p>
+            Aaj ki sari fireworks<br>
+            meri favourite bestie ke naam! 💗
+        </p>
+
+        <button onclick="fireworks()">Make It Boom 🎆</button>
+        <button onclick="nextPage(8)">Next 💕</button>
+    </section>
+
+
+    <!-- PAGE 8 -->
+    <section class="page" id="page8">
+        <div class="heart">🥺💗</div>
+
+        <h1>Ab Narazgi Khatam? 🥹</h1>
+
+        <p>
+            Mujhe pata hai tum bas mazak mein naraz ho 😭😂<br><br>
+
+            Lekin phir bhi... agar meri koi baat buri lagi ho
+            to sorry meri jaan. 🫶<br><br>
+
+            Tum meri bohat special bestie ho,
+            isliye tumhari narazgi mujhe bilkul achi nahi lagti. 💗
+        </p>
+
+        <button onclick="nextPage(9)">Okay, Maaf Kiya 😌</button>
+    </section>
+
+
+    <!-- PAGE 9 -->
+    <section class="page" id="page9">
+        <div class="heart">💖</div>
+
+        <h1>Yayyyyy! 🥹</h1>
+
+        <p class="final">
+            Ab ek smile karo... 😊<br>
+            Narazgi ko side pe rakho... 😂<br>
+            Aur apni cute si friendship ko<br>
+            wapas normal karo. 🫂💗
+        </p>
+
+        <div style="font-size:45px;margin-top:15px;">
+            💗 💕 🫶 💕 💗
+        </div>
+
+        <button onclick="nextPage(10)">Last Surprise ✨</button>
+    </section>
+
+
+    <!-- PAGE 10 -->
+    <section class="page" id="page10">
+        <div style="font-size:80px;">🌷</div>
+
+        <h1>One Last Thing... 💗</h1>
+
+        <p class="final">
+            Chahe hum kitna bhi ladein,<br>
+            kitni bhi narazgi ho,<br>
+            meri taraf se tumhari jagah<br>
+            hamesha special rahegi. 🥹💗
+        </p>
+
+        <p style="margin-top:15px;">
+            <b>Besties today, tomorrow & always. 🫂💕</b>
+        </p>
+
+        <div style="font-size:35px;margin-top:18px;">
+            🌸 💗 🌸
+        </div>
+
+        <p class="small">Now smile, Bestie. Mission "Manana" successful! 😂💗</p>
+    </section>
+
+</div>
+
+
+<script>
+
+let currentPage = 1;
+
+function nextPage(page){
+    document.getElementById("page" + currentPage).classList.remove("active");
+    document.getElementById("page" + page).classList.add("active");
+    currentPage = page;
+
+    if(page === 7){
+        setTimeout(fireworks,300);
+    }
+}
+
+function fireworks(){
+
+    const emojis = ["🎆","✨","💗","💕","🌸","💖","⭐"];
+
+    for(let i=0;i<45;i++){
+
+        const fw = document.createElement("div");
+
+        fw.className = "firework";
+
+        fw.innerHTML = emojis[Math.floor(Math.random()*emojis.length)];
+
+        fw.style.left = (45 + Math.random()*10) + "%";
+        fw.style.top = (40 + Math.random()*15) + "%";
+
+        fw.style.setProperty(
+            "--x",
+            ((Math.random()-0.5)*500) + "px"
+        );
+
+        fw.style.setProperty(
+            "--y",
+            ((Math.random()-0.5)*500) + "px"
+        );
+
+        document.body.appendChild(fw);
+
+        setTimeout(()=>{
+            fw.remove();
+        },1800);
+    }
+}
+
+
+// Floating hearts
+setInterval(()=>{
+
+    const h = document.createElement("div");
+
+    h.className = "floating";
+
+    h.innerHTML = ["💗","💕","💖","🌸","✨"][
+        Math.floor(Math.random()*5)
+    ];
+
+    h.style.left = Math.random()*100 + "%";
+    h.style.animationDuration = (4 + Math.random()*4) + "s";
+
+    document.body.appendChild(h);
+
+    setTimeout(()=>{
+        h.remove();
+    },8000);
+
+},700);
+
+</script>
+
+</body>
+</html>
